@@ -32,7 +32,7 @@ export class AuthController {
 @UseGuards(AuthGuard('google'))
 async googleAuthRedirect(@Req() req, @Res() res: Response) {
   const tokenData = await this.authService.googleLogin(req.user);
-  res.redirect(`http://localhost:5173/oauth-success?token=${tokenData.access_token}`);
+  res.redirect(`https://pixora-media.netlify.app/oauth-success?token=${tokenData.access_token}`);
 }
 
 
